@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 198 93% 60%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 287 99% 60%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 198 93% 60%;
+    --radius: 0.75rem;
+    --chart-1: 198 93% 60%;
+    --chart-2: 287 99% 60%;
+    --chart-3: 180 100% 50%;
+    --chart-4: 220 88% 66%;
+    --chart-5: 300 89% 60%;
+  }
+
+  .dark {
+    --background: 222 84% 5%; /* #091326 */
+    --foreground: 210 40% 98%;
+    --card: 222 84% 8%; /* #0E1B33 */
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 198 93% 60%; /* #49D9F7 - Electric Blue */
+    --primary-foreground: 222 84% 5%;
+
+    --secondary: 217 33% 17%; /* #1C2538 */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 287 99% 60%; /* #D949F7 - Neon Purple */
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217 33% 25%;
+    --input: 217 33% 17%;
+    --ring: 198 93% 60%;
+
+    --radius: 0.75rem;
+
+    --chart-1: 198 93% 60%;
+    --chart-2: 287 99% 60%;
+    --chart-3: 180 100% 50%;
+    --chart-4: 220 88% 66%;
+    --chart-5: 300 89% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    background-image: radial-gradient(ellipse 80% 50% at 50% -20%, hsl(var(--primary) / 0.1), transparent),
+                      radial-gradient(ellipse 80% 50% at 50% 120%, hsl(var(--accent) / 0.1), transparent);
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 5px hsl(var(--primary) / 0.8), 0 0 10px hsl(var(--primary) / 0.6);
+  }
+  .text-glow-accent {
+    text-shadow: 0 0 5px hsl(var(--accent) / 0.8), 0 0 10px hsl(var(--accent) / 0.6);
+  }
+  .card-glow {
+    @apply border-primary/20;
+    box-shadow: 0 0 15px hsl(var(--primary)/0.1), 0 0 5px hsl(var(--primary)/0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  .card-glow:hover {
+    box-shadow: 0 0 20px hsl(var(--primary)/0.3), 0 0 8px hsl(var(--primary)/0.3);
+  }
+  .button-glow {
+    box-shadow: 0 0 8px hsl(var(--primary) / 0.5), 0 0 15px hsl(var(--primary) / 0.3);
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  }
+  .button-glow:hover {
+    box-shadow: 0 0 12px hsl(var(--primary) / 0.7), 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  .message-glow-user {
+    box-shadow: 0 0 10px hsl(var(--accent) / 0.2), 0 2px 4px hsl(var(--accent) / 0.1);
+  }
+  .message-glow-bot {
+    box-shadow: 0 0 10px hsl(var(--primary) / 0.2), 0 2px 4px hsl(var(--primary) / 0.1);
+  }
+  .avatar-glow-bot {
+    box-shadow: 0 0 15px hsl(var(--primary) / 0.5), 0 0 8px hsl(var(--primary) / 0.3);
+  }
+  .avatar-glow-user {
+    box-shadow: 0 0 15px hsl(var(--accent) / 0.5), 0 0 8px hsl(var(--accent) / 0.3);
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  .animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .neon-grid {
+    background-image:
+      linear-gradient(hsl(var(--primary)/0.1) 1px, transparent 1px),
+      linear-gradient(to right, hsl(var(--primary)/0.1) 1px, transparent 1px);
+    background-size: 3rem 3rem;
+  }
+}
