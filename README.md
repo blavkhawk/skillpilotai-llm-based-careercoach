@@ -1,5 +1,3 @@
-# Firebase Studio
-
 # 🚀 SkillPilotAI – AI-Powered Career Coach
 
 SkillPilotAI is an intelligent, LLM-powered career guidance platform that helps students and professionals plan their careers, analyze resumes, identify skill gaps, and receive personalized learning and job recommendations.
